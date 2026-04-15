@@ -43,7 +43,7 @@ export const modelData = {
       "./danney/editorial/edi3.jpg",
       "./danney/editorial/edi1.webp",
       "./danney/editorial/edi2.webp",
-      "./danney/editorial/edi3.webp"
+      "./danney/editorial/edi3.jpg"
     ]
   }
 };
