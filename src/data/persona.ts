@@ -41,9 +41,9 @@ export const modelData = {
       "./danney/editorial/edi1.webp",
       "./danney/editorial/edi2.webp",
       "./danney/editorial/edi3.jpg",
-      "./danney/editorial/edi4.webp",
-      "./danney/editorial/edi5.webp",
-      "./danney/editorial/edi6.webp"
+      "./danney/editorial/edi1.webp",
+      "./danney/editorial/edi2.webp",
+      "./danney/editorial/edi3.webp"
     ]
   }
 };
