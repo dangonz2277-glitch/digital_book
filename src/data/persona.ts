@@ -30,20 +30,20 @@ export const modelData = {
     instagram: { handle: "@danneyescobar", followers: "4.070", link: "http://www.instagram.com/danneyescobar" }
   },
   images: {
-    hero: "/danney/hero.webp",
+    hero: "./danney/hero.webp",
     digitals: [
-      "/danney/digital/digi1.jpg",
-      "/danney/digital/digi2.jpg",
-      "/danney/digital/digi3.jpg",
-      "/danney/digital/digi4.jpg",
+      "./danney/digital/digi1.jpg",
+      "./danney/digital/digi2.jpg",
+      "./danney/digital/digi3.jpg",
+      "./danney/digital/digi4.jpg",
     ],
     portfolio: [
-      "/danney/editorial/edi1.webp",
-      "/danney/editorial/edi2.webp",
-      "/danney/editorial/edi3.jpg",
-      "/danney/editorial/edi4.webp",
-      "/danney/editorial/edi5.webp",
-      "/danney/editorial/edi6.webp"
+      "./danney/editorial/edi1.webp",
+      "./danney/editorial/edi2.webp",
+      "./danney/editorial/edi3.jpg",
+      "./danney/editorial/edi4.webp",
+      "./danney/editorial/edi5.webp",
+      "./danney/editorial/edi6.webp"
     ]
   }
 };
