@@ -67,7 +67,7 @@ export default function App() {
 
         {/* Mobile Nav */}
         <nav className="lg:hidden flex justify-between items-center p-6 border-b art-border bg-art-bg/80 backdrop-blur-md sticky top-0 z-50">
-          <button onClick={() => scrollToSection('hero')} className="font-display text-xl tracking-tighter">MY BOOK</button>
+          <button onClick={() => scrollToSection('hero')} className="font-display text-xl tracking-tighter">Danney's Book</button>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -162,7 +162,7 @@ export default function App() {
 
             {/* Botón Mobile - Visible solo en móviles */}
             <button 
-              onClick={() => scrollToSection('stats')} 
+              onClick={() => scrollToSection('profile')} 
               className="md:hidden mt-8 group flex items-center space-x-3 text-xs tracking-[0.2em] uppercase font-bold text-art-ink border-b border-art-ink pb-2 w-max hover:text-art-muted transition-colors"
             >
             <span>Ver Medidas Completas</span>
@@ -178,19 +178,19 @@ export default function App() {
               {/* Columna Izquierda: Datos Duros */}
               <div className="md:col-span-7">
                 <span className="text-1 tracking-[0.5em] font-bold text-art-accent uppercase block mb-6">Perfin Profesional</span>
-                <h2 className="text-3xl md:text-9xl font-serif italic tracking-tighter leading-none mb-16">Informacion.</h2>
+                <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mt-4">Informacion.</h2>
                 
                 {/* Título Principal */}
                 <div className="mb-12">
-                  <h3 className="text-2xl md:text-4xl font-bold italic mb-8 tracking-tight text-art-gold/90">
+                  <h3 className="text-2xl md:text-4xl font-bold italic mb-4 mt-8 tracking-tight text-art-gold/90">
                     Reconocimientos</h3>
                   {modelData.experience.titles.map((title, idx) => (
-                    <p key={idx} className="text-l md:text-xl mb-8 tb-8 tracking-tight text-art-ink/70">• {title}</p>
+                    <p key={idx} className="text-l md:text-xl tracking-tight text-art-ink/70">• {title}</p>
                   ))}
                 </div>
 
                 {/* Grid de Medidas Físicas */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8 mb-16 border-t border-b art-border py-12">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8 mb-8 border-t border-b art-border py-12">
                   {Object.entries(modelData.measurements).map(([key, value]) => (
                     <div key={key}>
                       <h4 className="text-s tracking-[0.3em] uppercase font-bold text-art-muted mb-2">{key}</h4>
