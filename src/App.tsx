@@ -11,9 +11,9 @@ import { modelData } from './data/persona';
 
 const SECTIONS = [
   { id: 'hero', title: 'DANNEY' },
+  { id: 'profile', title: 'PROFILE' },
   { id: 'digitals', title: 'POLAROIDS' },
   { id: 'portfolio', title: 'PORTFOLIO' },
-  { id: 'profile', title: 'PROFILE' }, // Cambiamos 'stats' a 'profile'
 ];
 
 export default function App() {
@@ -110,9 +110,9 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-art-accent text-xs tracking-[0.5em] font-bold uppercase mb-6"
+                className="text-art-accent text-1 tracking-[0.5em] font-bold uppercase mb-6"
               >
-                Modelo Profesional
+                Modelo
               </motion.div>
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
@@ -153,7 +153,7 @@ export default function App() {
               className="relative mt-12 mx-auto w-full max-w-[320px] md:absolute md:bottom-0 md:right-0 md:mt-0 md:max-w-none md:w-[400px] lg:w-[450px] xl:w-[550px] aspect-[3/4] shadow-2xl md:z-0 overflow-hidden"
             >
               <img 
-                src="modelData.images.hero" 
+                src={modelData.images.hero} 
                 alt="Danney Noir"
                 className="w-full h-full object-cover grayscale"
                 referrerPolicy="no-referrer"
@@ -170,60 +170,6 @@ export default function App() {
             </button>
           </section>
 
-          {/* Digitals Section */}
-          <section 
-            id="digitals"
-            className="py-20 px-8 lg:px-16 border-t art-border"
-          >
-            <div className="mb-20">
-              <span className="text-xs tracking-[0.5em] font-bold text-art-accent uppercase">Limpio & Natural</span>
-              <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mt-4">Polaroids.</h2>
-              <p className="text-art-muted mt-6 max-w-md">Polaroids sin editar, tomadas con luz natural, para su revisión por la agencia.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {modelData.images.digitals.map((src, idx) => (
-                <div key={idx} className="aspect-[3/4] overflow-hidden bg-art-ink/5">
-                  <img 
-                    src={src} 
-                    alt={`Digital ${idx}`}
-                    className="w-full h-full object-cover grayscale"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-
-                    {/* Portfolio Section */}
-          <section 
-            id="portfolio"
-            className="py-20 px-8 lg:px-16 border-t art-border"
-          >
-            <div className="mb-20">
-              <span className="text-xs tracking-[0.5em] font-bold text-art-accent uppercase">Portfolio</span>
-              <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mt-4">Work.</h2>
-            </div>
-
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-              {modelData.images.portfolio.map((src, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="break-inside-avoid group cursor-pointer overflow-hidden bg-art-ink/5"
-                >
-                  <img 
-                    src={src} 
-                    alt={`Portfolio ${idx}`}
-                    className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
           {/* Stats Section */}
           {/* Profile & Experience Section */}
           <section id="profile" className="py-20 px-8 lg:px-16 border-t art-border">
@@ -231,14 +177,15 @@ export default function App() {
               
               {/* Columna Izquierda: Datos Duros */}
               <div className="md:col-span-7">
-                <span className="text-xs tracking-[0.5em] font-bold text-art-accent uppercase block mb-6">Professional Profile</span>
-                <h2 className="text-6xl md:text-9xl font-serif italic tracking-tighter leading-none mb-16">Data.</h2>
+                <span className="text-1 tracking-[0.5em] font-bold text-art-accent uppercase block mb-6">Perfin Profesional</span>
+                <h2 className="text-3xl md:text-9xl font-serif italic tracking-tighter leading-none mb-16">Informacion.</h2>
                 
                 {/* Título Principal */}
                 <div className="mb-12">
-                  <h3 className="text-2xl font-serif italic text-art-gold mb-4">Reconocimientos</h3>
+                  <h3 className="text-2xl md:text-4xl font-bold italic mb-8 tracking-tight text-art-gold/90">
+                    Reconocimientos</h3>
                   {modelData.experience.titles.map((title, idx) => (
-                    <p key={idx} className="text-lg text-art-ink/80">• {title}</p>
+                    <p key={idx} className="text-l md:text-xl mb-8 tb-8 tracking-tight text-art-ink/70">• {title}</p>
                   ))}
                 </div>
 
@@ -246,18 +193,19 @@ export default function App() {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8 mb-16 border-t border-b art-border py-12">
                   {Object.entries(modelData.measurements).map(([key, value]) => (
                     <div key={key}>
-                      <h4 className="text-[10px] tracking-[0.3em] uppercase font-bold text-art-ink mb-2">{key}</h4>
-                      <p className="text-xl font-serif italic text-art-muted">{value}</p>
+                      <h4 className="text-s tracking-[0.3em] uppercase font-bold text-art-muted mb-2">{key}</h4>
+                      <p className="text-3xl font-serif italic text-art-ink">{value}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Experiencia de Marcas */}
                 <div>
-                  <h3 className="text-xl font-serif italic mb-6">Selected Clients & Brands</h3>
+                  <h3 className="text-2xl md:text-4xl font-bold italic mb-8 tracking-tight text-art-ink/90">
+                    Colaboraciones Seleccionadas</h3>
                   <div className="flex flex-wrap gap-3">
                     {modelData.experience.clients.map((client, idx) => (
-                      <span key={idx} className="px-4 py-2 text-xs border art-border rounded-full text-art-muted uppercase tracking-widest">
+                      <span key={idx} className="px-4 py-2 text-s border art-border rounded-full text-art-muted uppercase tracking-widest">
                         {client}
                       </span>
                     ))}
@@ -286,9 +234,14 @@ export default function App() {
                   </div>
 
                   <div className="space-y-4 pt-6">
-                    <button className="w-full bg-art-accent text-white py-5 text-[10px] tracking-[0.3em] font-bold uppercase hover:brightness-110 transition-all">
+                    <a 
+                      href="https://wa.me/59175847572?text=Hola,%20quisiera%20contactar%20a%20Danney%20Escobar%20para%20un%20proyecto"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block text-center w-full bg-art-accent text-white py-5 text-[10px] tracking-[0.3em] font-bold uppercase hover:brightness-110 transition-all"
+                    >
                       CONTACTAR A DANNEY
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -296,16 +249,99 @@ export default function App() {
             </div>
           </section>
 
+          {/* Digitals Section */}
+          <section 
+            id="digitals"
+            className="py-20 px-8 lg:px-16 border-t art-border"
+          >
+            <div className="mb-20">
+              <span className="text-1 tracking-[0.5em] font-bold text-art-accent uppercase">Crudo & Natural</span>
+              <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mt-4">Polaroids.</h2>
+              <p className="text-art-muted mt-6 max-w-md">Polaroids sin editar, tomadas con luz natural, para su revisión por la agencia.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {modelData.images.digitals.map((src, idx) => (
+                <div key={idx} className="aspect-[3/4] overflow-hidden bg-art-ink/5">
+                  <img 
+                    src={src} 
+                    alt={`Digital ${idx}`}
+                    className="w-full h-full object-cover grayscale"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+                    {/* Portfolio Section */}
+          <section 
+            id="portfolio"
+            className="py-20 px-8 lg:px-16 border-t art-border"
+          >
+            <div className="mb-20">
+              <span className="text-1 tracking-[0.5em] font-bold text-art-accent uppercase">Portfolio</span>
+              <h2 className="text-6xl md:text-8xl font-serif italic tracking-tighter mt-4">Sesiones Fotográficas.</h2>
+            </div>
+
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+              {modelData.images.portfolio.map((src, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="break-inside-avoid group cursor-pointer overflow-hidden bg-art-ink/5"
+                >
+                  <a href="https://www.instagram.com/danneyescobar/" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={src} 
+                      alt={`Portfolio ${idx}`}
+                      className="w-full h-auto group-hover:grayscale-0 transition-all duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+
           {/* Footer */}
-          <footer className="py-20 px-8 lg:px-16 border-t art-border">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] tracking-[0.3em] text-art-muted uppercase">
-              <p>© 2024 perezarandia. All Rights Reserved.</p>
+          {/* Footer */}
+          <footer className="py-20 px-8 lg:px-16 border-t art-border bg-art-bg">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-8 text-[10px] tracking-[0.3em] text-art-ink/80 uppercase">
+              
+              {/* Copyright Estilo Editorial */}
+              <p className="text-center md:text-left leading-relaxed">
+                © {new Date().getFullYear()} DUSKNOIR STUDIO. <br className="md:hidden" /> ALL RIGHTS RESERVED.
+              </p>
+              
+              {/* Redes Sociales del Fotógrafo/Desarrollador */}
               <div className="flex space-x-8">
-                <Instagram size={16} />
-                <Twitter size={16} />
-                <Mail size={16} />
+                <a href="https://instagram.com/perezarandia" target="_blank" rel="noreferrer" className="hover:text-art-accent transition-colors">
+                  <Instagram size={18} />
+                </a>
+                <a href="https://x.com/12Dan1998" target="_blank" rel="noreferrer" className="hover:text-art-accent transition-colors">
+                  <Twitter size={18} />
+                </a>
+                <a href="mailto:dan1998.27.12@gmail.com" className="hover:text-art-accent transition-colors">
+                  <Mail size={18} />
+                </a>
               </div>
-              <p>Designed by Daniel</p>
+
+              {/* Firma y Botón para Móviles */}
+              <div className="flex flex-col items-center md:items-end gap-5">
+                <p>Designed & Developed by Daniel Pérez</p>
+                <a 
+                  href="https://wa.me/59175847572?text=Hola%20Daniel,%20me%20encanta%20tu%20trabajo.%20Quiero%20cotizar%20un%20proyecto."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-art-accent text-white px-8 py-4 text-[10px] tracking-widest font-bold uppercase hover:brightness-110 transition-all text-center w-full md:w-auto"
+                >
+                  Contratar Estudio
+                </a>
+              </div>
+
             </div>
           </footer>
         </main>
@@ -327,23 +363,29 @@ export default function App() {
             </ul>
           </nav>
 
-          <div className="space-y-8">
+          {/* Lead Gen - DuskNoir Studio */}
             <div className="pt-12 border-t border-white/10">
               <div className="flex items-center mb-4">
-                <div className="w-3 h-3 bg-art-gold rounded-full mr-3"></div>
-                <h3 className="text-2xl font-serif italic">Próxima Exhibición</h3>
+                <div className="w-2 h-2 bg-art-gold rounded-full mr-3"></div>
+                <h3 className="text-xl font-serif italic text-white/90">Digital Comp Card</h3>
               </div>
-              <p className="text-sm text-white/60 leading-relaxed mb-8">
-                Únete a nuestra muestra anual de diseño minimalista el próximo 12 de Noviembre en la Galería Central de Artes Digitales.
+              <p className="text-xs text-white/50 leading-relaxed mb-8">
+                Diseño web editorial y arquitectura de portafolios para talentos de la industria.
               </p>
-              <button className="w-full bg-art-accent text-white py-5 text-xs tracking-widest font-bold uppercase hover:brightness-110 transition-all">
-                CONTACTAR A DANNEY
-              </button>
+              
+              <a 
+                href="https://wa.me/59175847572?text=Hola%20Daniel,%20me%20interesa%20un%20Digital%20Comp%20Card%20como%20el%20de%20Danney" 
+                target="_blank" 
+                rel="noreferrer"
+                className="block w-full bg-art-gold text-white py-4 text-center text-xs tracking-widest font-bold uppercase hover:brightness-110 transition-all"
+              >
+                OBTÉN TU PORTAFOLIO
+              </a>
+              
+              <p className="text-[9px] tracking-widest uppercase text-white/30 text-center pt-5">
+                Powered by Daniel Perez Arandia - Web Developer & Designer
+              </p>
             </div>
-            <div className="text-[120px] font-serif text-white/5 leading-none select-none text-right">
-              {activeSection === 'hero' ? '01' : activeSection === 'portfolio' ? '02' : activeSection === 'digitals' ? '03' : '04'}
-            </div>
-          </div>
         </section>
 
       </div>
