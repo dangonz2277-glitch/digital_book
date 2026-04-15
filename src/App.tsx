@@ -153,7 +153,7 @@ export default function App() {
               className="relative mt-12 mx-auto w-full max-w-[320px] md:absolute md:bottom-0 md:right-0 md:mt-0 md:max-w-none md:w-[400px] lg:w-[450px] xl:w-[550px] aspect-[3/4] shadow-2xl md:z-0 overflow-hidden"
             >
               <img 
-                src="src/assets/danney/hero.webp" 
+                src="modelData.images.hero" 
                 alt="Danney Noir"
                 className="w-full h-full object-cover grayscale"
                 referrerPolicy="no-referrer"
