@@ -185,7 +185,7 @@ export default function App() {
                   <h3 className="text-2xl md:text-4xl font-bold italic mb-4 mt-8 tracking-tight text-art-gold/90">
                     Reconocimientos</h3>
                   {modelData.experience.titles.map((title, idx) => (
-                    <p key={idx} className="text-l md:text-xl tracking-tight text-art-ink/70">• {title}</p>
+                    <p key={idx} className="text-l md:text-xl tracking-tight text-art-ink/70">• <a href="https://www.instagram.com/p/DUN6jXtjrnW/?hl=es&img_index=1">{title}</a></p>
                   ))}
                 </div>
 
@@ -313,7 +313,7 @@ export default function App() {
               
               {/* Copyright Estilo Editorial */}
               <p className="text-center md:text-left leading-relaxed">
-                © {new Date().getFullYear()} DUSKNOIR STUDIO. <br className="md:hidden" /> ALL RIGHTS RESERVED.
+                © {new Date().getFullYear()} Noir By Arandia <br className="md:hidden" /> ALL RIGHTS RESERVED.
               </p>
               
               {/* Redes Sociales del Fotógrafo/Desarrollador */}
@@ -338,7 +338,7 @@ export default function App() {
                   rel="noreferrer"
                   className="bg-art-accent text-white px-8 py-4 text-[10px] tracking-widest font-bold uppercase hover:brightness-110 transition-all text-center w-full md:w-auto"
                 >
-                  Contratar Estudio
+                  Obten tú portfolio digital
                 </a>
               </div>
 
